@@ -1,3 +1,8 @@
+0_main.cpp -- simple main program
+1_foo.cpp  -- simple function
+
+
+
 Examples of source files and their assembly.
 
 https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf
@@ -94,3 +99,12 @@ foo:
         popq %r12 # Restore registers
         popq %rbx # Pop return address and return control to caller
         ret
+
+
+
+
+Recommend using
+https://github.com/mattgodbolt/compiler-explorer
+
+with an installation of nodejs using
+https://github.com/nvm-sh/nvm
