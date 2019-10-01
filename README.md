@@ -88,20 +88,17 @@ ret
 Putting it together, the code for a function should look like this:
 
 foo:
-        pushq %rbx # Save registers, if needed
-        pushq %r12
-        pushq %r13
-        subq $0x18, %rsp # Allocate stack space
+pushq %rbx # Save registers, if needed
+pushq %r12
+pushq %r13
+subq $0x18, %rsp # Allocate stack space
 
-        # Function body
+# Function body
 
-        addq $0x18, %rsp popq %r13 # Deallocate stack space
-        popq %r12 # Restore registers
-        popq %rbx # Pop return address and return control to caller
-        ret
-
-
-
+addq $0x18, %rsp popq %r13 # Deallocate stack space
+popq %r12 # Restore registers
+popq %rbx # Pop return address and return control to caller
+ret
 
 Recommend using
 https://github.com/mattgodbolt/compiler-explorer
