@@ -1,28 +1,20 @@
-0_main.cpp -- simple main program
-
-1_foo.cpp  -- simple function
+- 0_main.cpp -- simple main program
+- 1_foo.cpp  -- simple function
 
 
 
 Examples of source files and their assembly.
-
-https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf
-
-http://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html
-
-https://en.wikipedia.org/wiki/Call_stack#Structure
+- https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf
+- http://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html
+- https://en.wikipedia.org/wiki/Call_stack#Structure
 
 Assembly notes:
 
 Suffixes:
-
-b - one byte integer
-
-w - word, two byte integer
-
-l - double word, four byte integer
-
-q - quad word, eight byte integer
+- b - one byte integer
+- w - word, two byte integer
+- l - double word, four byte integer
+- q - quad word, eight byte integer
 
 16 registers in x86-64:
 `%rax`, `%rbx`, `%rcx`, `%rdx`, `%rdi`, `%rsi`, `%rbp`, `%rsp`, and
