@@ -1,12 +1,14 @@
-- 0_main.cpp -- simple main program
-- 1_foo.cpp  -- simple function
-
+- 0_main.cpp       -- simple main program
+- 1_foo.cpp        -- simple function
+- 2_main_foo.cpp   -- main calls simple function
+- 3_main_foo_7.cpp -- main calls simple function with 7 arguments
 
 
 Examples of source files and their assembly.
 - https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf
 - http://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html
 - https://en.wikipedia.org/wiki/Call_stack#Structure
+- https://eli.thegreenplace.net/2011/02/04/where-the-top-of-the-stack-is-on-x86/
 
 Assembly notes:
 
@@ -19,6 +21,10 @@ Suffixes:
 16 registers in x86-64:
 `%rax`, `%rbx`, `%rcx`, `%rdx`, `%rdi`, `%rsi`, `%rbp`, `%rsp`, and
 `%r8-r15`.
+
+The base pointer `%ebp` is used by convention as a point of reference
+for finding parameters and local variables on the stack. `%esp` points
+to the top of the stack, i.e., the lowest address.
 
 Parentheses on a register dereference the register. E.g., if arr
 is an array of integers, arr's address is in `%rax`, `i` is stored in
