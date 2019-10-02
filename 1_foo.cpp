@@ -5,8 +5,8 @@
 // movl %edi, -4(%rbp)  // move value in %edi (a) to 4 bytes below sp
 // movq %esi, -8(%rbp)  // move value in %esi (b) to 8 bytes below sp
 
-// movl -4(%rbp), %edx  // move value 4 bytes below sp to %edx
-// movl -8(%rbp), %eax  // move value 4 bytes below sp to %eax
+// movl -4(%rbp), %edx  // move val at 4 bytes below sp to %edx
+// movl -8(%rbp), %eax  // move val at 4 bytes below sp to %eax
 // addl %edx, %eax      // add values in %edx %eax, leave in %eax
 
 // popq %rbp            // pop calling base pointer qw from stack
