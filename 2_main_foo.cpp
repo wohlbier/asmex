@@ -1,5 +1,6 @@
 // Assembly for a main function that calls a simple function that adds
 // two numbers and returns.
+
 int foo(int a, int b)
 {
     return a+b;
@@ -27,9 +28,9 @@ int main(int argc, char* argv[])
 // main:
 //         pushq   %rbp            // push calling frame bp qw onto stack
 //         movq    %rsp, %rbp      // move top of stack qw ptr into %rbp
-//         subq    $32, %rsp       // allocate 32 bytes of stack space
-//         movl    %edi, -20(%rbp) // move argv to 20 bytes below bp
-//         movq    %rsi, -32(%rbp) // move argc to 32 bytes below bp
+//         subq    $32, %rsp       // make stack frame
+//         movl    %edi, -20(%rbp) // move argc to 20 bytes below bp
+//         movq    %rsi, -32(%rbp) // move argv to 32 bytes below bp
 //         movl    $3, -8(%rbp)    // put 3 (a) into 8 bytes below bp
 //         movl    $2, -4(%rbp)    // put 2 (b) into 4 bytes below bp
 //         movl    -4(%rbp), %edx  // move val 4 bytes below bp to %edx (b)

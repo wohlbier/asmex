@@ -1,4 +1,5 @@
 // Assembly for a function that adds two numbers and returns.
+
 int foo(int a, int b)
 {
     return a+b;
