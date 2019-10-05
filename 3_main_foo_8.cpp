@@ -34,25 +34,25 @@ int main(int argc, char* argv[])
 //         movq    %rcx, -32(%rbp) // d
 //         movq    %r8, -40(%rbp)  // e
 //         movq    %r9, -48(%rbp)  // f
-//         movq    -8(%rbp), %rdx  // "pop" h, but %rsp doesn't increase
-//         movq    -16(%rbp), %rax // "pop" g
-//         addq    %rax, %rdx      // h+g
-//         movq    -24(%rbp), %rax // c
-//         addq    %rax, %rdx      // c+h+g
-//         movq    -32(%rbp), %rax // d
-//         addq    %rax, %rdx      // d+c+h+g
-//         movq    -40(%rbp), %rax // e
-//         addq    %rax, %rdx      // e+d+c+h+g
-//         movq    -48(%rbp), %rax // f
-//         addq    %rax, %rdx      // f+e+d+c+h+g
-//         movq    16(%rbp), %rax
-//         addq    %rax, %rdx
-//         movq    24(%rbp), %rax
-//         addq    %rdx, %rax
-//         popq    %rbp
-//         ret
+//         movq    -8(%rbp), %rdx  // a into %rdx
+//         movq    -16(%rbp), %rax // b into %rax
+//         addq    %rax, %rdx      // a+b into %rdx
+//         movq    -24(%rbp), %rax // c into %rax
+//         addq    %rax, %rdx      // c+a+b into %rdx
+//         movq    -32(%rbp), %rax // d into %rax
+//         addq    %rax, %rdx      // d+c+a+b into %rdx
+//         movq    -40(%rbp), %rax // e into %rax
+//         addq    %rax, %rdx      // e+d+c+a+b into %rdx
+//         movq    -48(%rbp), %rax // f into %rax
+//         addq    %rax, %rdx      // f+e+d+c+a+b into %rdx
+//         movq    16(%rbp), %rax  // g into %rax
+//         addq    %rax, %rdx      // g+f+e+d+c+a+b into %rdx
+//         movq    24(%rbp), %rax  // h into %rax
+//         addq    %rdx, %rax      // h+g+f+e+d+c+a+b into %rdx
+//         popq    %rbp            // pop previous bp
+//         ret                     // pop return location
 // main:
-//         pushq   %rbp
+//         pushq   %rbp            // pushes %rbp value to top of stack
 //         movq    %rsp, %rbp      // %rbp = %rsp
 //         subq    $80, %rsp       // make stack frame. %rsp=%rbp-80
 //         movl    %edi, -68(%rbp) // argc
@@ -76,6 +76,8 @@ int main(int argc, char* argv[])
 //         movq    %r8, %r9        // put f in %rd9
 //         movq    %rdi, %r8       // put e in %r8
 //         movq    %rax, %rdi      // put a in %rdi
+//         NB: call instruction pushes the address after call to the
+//             stack to return to.
 //         call    foo(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)
 //         addq    $16, %rsp       // increase %rsp for g,h
 //         leave
