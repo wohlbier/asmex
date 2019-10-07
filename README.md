@@ -1,7 +1,8 @@
-- 0_main.cpp       -- simple main program
-- 1_foo.cpp        -- simple function
-- 2_main_foo.cpp   -- main calls simple function
-- 3_main_foo_7.cpp -- main calls simple function with 7 arguments
+- 0_main.cpp             -- simple main program
+- 1_foo.cpp              -- simple function
+- 2_main_foo.cpp         -- main calls simple function
+- 3_main_foo_8.cpp       -- main calls simple function with 8 arguments
+- 3_main_foo_8_stack.cpp -- details of stack values and ptrs for above
 
 
 Examples of source files and their assembly.
